@@ -10,14 +10,11 @@ const Video = () => {
 		setVideo(document.querySelector("video"));
 	}, []);
 
-	const playVideo = () => {
-		setPlaying(true);
-		video.play();
-	};
-
-	const pauseVideo = () => {
-		setPlaying(false);
-		video.pause();
+	const changeVideo = () => {
+		if (playing) video.pause();
+		else video.play();
+		
+		setPlaying(current => !current);
 	};
 
 	const enableFullscreen = () => {
@@ -28,16 +25,9 @@ const Video = () => {
 		<div className="video-container">
 			<div className="video-overlay">
 				<div className="video-play-pause">
-					{!playing && 
-						<button className="video-overlay-icon" onClick={() => playVideo()}>
-							<i className="fa-solid fa-play"></i>
-						</button>
-					}
-					{playing && 
-						<button className="video-overlay-icon" onClick={() => pauseVideo()}>
-							<i className="fa-solid fa-pause"></i>
-						</button>
-					}
+					<button className="video-overlay-icon" onClick={() => changeVideo()}>
+						<i className={`fa-solid ${playing ? "fa-pause" : "fa-play"}`}></i>
+					</button>
 				</div>
 				<div className="video-fullscreen">
 					<button className="video-overlay-icon" onClick={() => enableFullscreen()}>
