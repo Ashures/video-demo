@@ -4,9 +4,8 @@ const Video = () => {
 			<div className="video-overlay">
 				<div className="video-content">
 					<video>
-						<source src="" type="" />
+						<source src="video/hologram.mp4" type="video/mp4" />
 					</video>
-					hi
 				</div>
 			</div>
 		</div>
