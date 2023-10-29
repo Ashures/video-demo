@@ -11,8 +11,20 @@
 
 
 /* --- Video --- */
+.video-container {
+  position: relative;
+  display: flex;
+}
 
-.video-content > video {
-  width: 480px;
+.video-overlay { 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.video-content > video,
+.video-container {
+  max-width: 480px;
   aspect-ratio: 16 / 9;
 }
