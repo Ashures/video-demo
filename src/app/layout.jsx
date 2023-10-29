@@ -1,3 +1,5 @@
+import "public/css/main.css";
+
 export const metadata = {
   title: 'Video Player | Ashures',
   description: 'Made by Ashures',
